@@ -3,12 +3,15 @@
     <link rel="stylesheet" href="/static/css/styles.css">
     <title>{% block title %}{% endblock %}</title>
     <script src="/static/js/functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 
 <body>
     <header class="header">
-        <a href="/" onclick="clearHTMLandLoad('/')">Music-WYG</a>
-        <a href="/user/" onclick="clearHTMLandLoad('/user/')">User</a>
+        <nav>
+            <a href="/" onclick="clearHTMLandLoad('/')">Music-WYG</a>
+            <a href="/user/" onclick="clearHTMLandLoad('/user/')">User</a>
+        </nav>
     </header>
     <div class="body-container" id="body-container">
         {% block content %}{% endblock %}
