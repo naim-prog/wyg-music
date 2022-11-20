@@ -6,15 +6,16 @@
 </head>
 
 <body>
-    <header>
-        <h2>WYG-Music</h2>
+    <header class="header">
+        <a href="/" onclick="clearHTMLandLoad('/')">Music-WYG</a>
+        <a href="/user/" onclick="clearHTMLandLoad('/user/')">User</a>
     </header>
     <div class="body-container" id="body-container">
         {% block content %}{% endblock %}
     </div>
     <div class="music-container">
         <audio class="player" controls>
-            <source src="songs/song-name.mp3" type="audio/mp3">
+            <source src="/songs/song-name.mp3" type="audio/mp3">
         </audio>
     </div>
 </body>

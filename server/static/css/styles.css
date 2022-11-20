@@ -1,5 +1,10 @@
-div.body-container {
+header.header {
+    display: flex;
+    flex-direction: row;
+}
 
+div.body-container {
+    font-size: 13px;
 }
 
 div.music-container {
