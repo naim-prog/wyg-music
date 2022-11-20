@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="/static/js/functions.js"></script>
+</head>
+
+<body>
+    <header>
+        <h2>WYG-Music</h2>
+    </header>
+    <div class="body-container">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="music-container">
+        <audio class="player" controls>
+            <source src="songs/song-name.mp3" type="audio/mp3">
+        </audio>
+    </div>
+</body>
