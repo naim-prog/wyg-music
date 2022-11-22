@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="/static/css/styles.css">
-    <title>{% block title %}{% endblock %}</title>
-    <script src="/static/js/functions.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <title>WYG-Music</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script type="text/javascript" src="/static/js/functions.js"></script>
 </head>
 
 <body>
     <header class="header">
         <nav>
-            <a href="/" onclick="clearHTMLandLoad('/')">Music-WYG</a>
-            <a href="/user/" onclick="clearHTMLandLoad('/user/')">User</a>
+            <a href="#" onclick="hrefClickHome()" id="href-home">Music-WYG</a>
+            <a href="#" onclick="hrefClickUser()" id="href-user">User</a>
         </nav>
     </header>
     <div class="body-container" id="body-container">
-        {% block content %}{% endblock %}
+
     </div>
     <div class="music-container">
         <audio class="player" controls>
-            <source src="/songs/song-name.mp3" type="audio/mp3">
+            <source src="/songs/passenger-let-her-go.mp3" type="audio/mp3">
         </audio>
     </div>
 </body>

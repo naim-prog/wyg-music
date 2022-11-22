@@ -19,8 +19,8 @@ def home():
 # User
 @app.get("/user/")
 def get_user():
-    return render_template(
-        "user.html"
+    return send_file(
+        "templates/user.html"
     )
 
 # Send music file
