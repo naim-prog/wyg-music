@@ -8,10 +8,13 @@
 
 <body>
     <header class="header">
-        <nav>
+        <div class="header-home">
             <a href="#" onclick="hrefClickHome()" id="href-home">Music-WYG</a>
+        </div>
+        {% include "search-bar.html" %}
+        <div class="header-user">
             <a href="#" onclick="hrefClickUser()" id="href-user">User</a>
-        </nav>
+        </div>
     </header>
     <div class="body-container" id="body-container">
         {% block body %} {% endblock %}

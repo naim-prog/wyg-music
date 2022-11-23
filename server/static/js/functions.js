@@ -37,3 +37,25 @@ function hrefClickUser() {
         }
     })
 }
+
+function formClickSearch() {
+    var search_text = document.getElementById('search-form-input-search').value;
+    console.log("/search/?search=" + search_text);
+    $.ajax({
+        url: "/search/",
+        timeout: 5000,
+        type: 'GET',
+        arguments: {"search": search_text},
+        headers: {'Ajax-Render': true},
+        success: function(msg, status) {
+            console.log(msg);
+            console.log(status);
+            if(status == 'success') {
+                history.replaceState('','','/search/');
+                console.log("url: /search/" + search_text);
+                $('#body-container').html(msg);
+            }
+            document.title = 'WYG - Search ' + search_text;
+        }
+    })
+}

@@ -1,0 +1,3 @@
+<h2>
+    Has buscado: "{{ user_search }}"
+</h2>

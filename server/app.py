@@ -9,6 +9,7 @@ from global_vars import *
 from app_home       import app_home
 from app_user       import app_user
 from app_songs      import app_songs
+from app_search     import app_search
 
 # Init of app
 app = Flask(__name__)
@@ -20,6 +21,7 @@ app.secret_key = secrets.token_hex(32)
 app.register_blueprint(app_home)
 app.register_blueprint(app_user)
 app.register_blueprint(app_songs)
+app.register_blueprint(app_search)
 
 
 # Main app

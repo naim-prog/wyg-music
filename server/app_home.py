@@ -7,7 +7,7 @@ app_home = Blueprint(__name__, "app_home")
 
 # Home
 @app_home.get("/")
-def home():
+def get_home():
     
     # Render only body container
     if request.headers.get('Ajax-Render'):
