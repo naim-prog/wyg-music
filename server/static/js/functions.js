@@ -7,6 +7,7 @@ function hrefClickHome() {
         url: '/',
         timeout: 5000,
         type: 'GET',
+        headers: {'Ajax-Render': true},
         success: function(msg, status) {
             console.log(status);
             if(status == 'success') {
@@ -15,7 +16,6 @@ function hrefClickHome() {
                 $('#body-container').html(msg);
             }
         }
-
     })
 }
 
@@ -24,6 +24,7 @@ function hrefClickUser() {
         url: '/user/',
         timeout: 5000,
         type: 'GET',
+        headers: {'Ajax-Render': true},
         success: function(msg, status) {
             console.log(status);
             if(status == 'success') {
@@ -32,6 +33,5 @@ function hrefClickUser() {
                 $('#body-container').html(msg);
             }
         }
-
     })
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="/static/css/styles.css">
-    <title>WYG-Music</title>
+    <title>{% block title %} {% endblock %}</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script type="text/javascript" src="/static/js/functions.js"></script>
 </head>
@@ -14,7 +14,7 @@
         </nav>
     </header>
     <div class="body-container" id="body-container">
-
+        {% block body %} {% endblock %}
     </div>
     <div class="music-container">
         <audio class="player" controls>
