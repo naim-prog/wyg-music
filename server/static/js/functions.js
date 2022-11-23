@@ -2,6 +2,10 @@
 // from another endpoint of the web and we can still have
 // the header and the music player on the bottom of the page
 
+window.onload = function() {
+}
+
+
 function hrefClickHome() {
     $.ajax({
         url: '/',
@@ -9,10 +13,8 @@ function hrefClickHome() {
         type: 'GET',
         headers: {'Ajax-Render': true},
         success: function(msg, status) {
-            console.log(status);
-            if(status == 'success') {
+            if(status === 'success') {
                 history.replaceState('','','/');
-                console.log("url: /");
                 $('#body-container').html(msg);
             }
             document.title = 'WYG - Home';
@@ -27,10 +29,8 @@ function hrefClickUser() {
         type: 'GET',
         headers: {'Ajax-Render': true},
         success: function(msg, status) {
-            console.log(status);
-            if(status == 'success') {
+            if(status === 'success') {
                 history.replaceState('','','/user/');
-                console.log("url: /user/");
                 $('#body-container').html(msg);
             }
             document.title = 'WYG - User profile';
@@ -38,24 +38,20 @@ function hrefClickUser() {
     })
 }
 
-function formClickSearch() {
-    var search_text = document.getElementById('search-form-input-search').value;
-    console.log("/search/?search=" + search_text);
+
+function hrefSearch() {
+    var query = document.getElementById("search-form-input-search").value;
     $.ajax({
-        url: "/search/",
+        url: '/search/?search='+query,
         timeout: 5000,
         type: 'GET',
-        arguments: {"search": search_text},
         headers: {'Ajax-Render': true},
         success: function(msg, status) {
-            console.log(msg);
-            console.log(status);
-            if(status == 'success') {
-                history.replaceState('','','/search/');
-                console.log("url: /search/" + search_text);
+            if(status === 'success') {
+                history.replaceState('','','/search/?search='+query);
                 $('#body-container').html(msg);
             }
-            document.title = 'WYG - Search ' + search_text;
+            document.title = 'WYG - Search '+query;
         }
     })
 }

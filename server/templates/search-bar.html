@@ -1,12 +1,6 @@
 <div class="search-form">
-    <form id="search-form-id" action="/search/" method="get">
-        <div>
-            <input class="search-form-input-search" id="search-form-input-search" type="text" name="search" placeholder="Buscar">
-        </div>
+    <form id="search-form-id" action="/search/">
+        <input class="search-form-input-search" id="search-form-input-search" type="text" name="search" placeholder="Buscar">
+        <input class="search-button-img" id="search-button-img" type="button" onclick="hrefSearch()">
     </form>
-</div>
-<div class="search-button">
-    <button form="search-form-id" onclick="formClickSearch()">
-        <img class="search-button-img" src="/static/img/search-icon.png">
-    </button>
 </div>
