@@ -15,6 +15,7 @@ function hrefClickHome() {
                 console.log("url: /");
                 $('#body-container').html(msg);
             }
+            document.title = 'WYG - Home';
         }
     })
 }
@@ -32,6 +33,7 @@ function hrefClickUser() {
                 console.log("url: /user/");
                 $('#body-container').html(msg);
             }
+            document.title = 'WYG - User profile';
         }
     })
 }

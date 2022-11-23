@@ -5,47 +5,24 @@ import secrets
 # Global variables
 from global_vars import *
 
+# For blueprints
+from app_home       import app_home
+from app_user       import app_user
+from app_songs      import app_songs
+
+# Init of app
 app = Flask(__name__)
 
+# Secret key for sessions
 app.secret_key = secrets.token_hex(32)
 
-# Home
-@app.get("/")
-def home():
-    
-    # Render only body container
-    if request.headers.get('Ajax-Render'):
-        return send_file(
-            "templates/home"
-        )
-
-    # Render hole page
-    return render_template(
-        "home.html"
-    )
-
-# User
-@app.get("/user/")
-def get_user():
-    
-    # Render only body container
-    if request.headers.get('Ajax-Render'):
-        return send_file(
-            "templates/user"
-        )
-
-    # Render hole page
-    return render_template(
-        "user.html"
-    )
-        
-
-# Send music file
-@app.get("/songs/<string:song_name>")
-def get_song(song_name):
-    return send_file(f"{BASE_SERVER_DIRECTORY}/songs/{song_name}", mimetype="audio/mp3")
+# Register diferents blueprints from files
+app.register_blueprint(app_home)
+app.register_blueprint(app_user)
+app.register_blueprint(app_songs)
 
 
+# Main app
 if __name__ == "__main__":
     # Run the app
     app.run(host="0.0.0.0", debug=True)
