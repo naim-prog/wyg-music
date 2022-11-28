@@ -16,7 +16,12 @@
             </div>
             {% include "search-bar.html" %}
             <div class="header-user">
-                <a hx-get="/user/" hx-swap="outerHTML" hx-target="#body-container" hx-push-url="true" id="href-user">User</a>
+                {% if user_in_session %}
+                    <a hx-get="/{{ user_in_session }}/" hx-swap="outerHTML" hx-target="#body-container" hx-push-url="true" id="href-user">User</a>
+                {% else %}
+                    <a hx-get="/login/" hx-swap="outerHTML" hx-target="#body-container" hx-push-url="true" id="href-login">Login</a>
+                    <a hx-get="/register/" hx-swap="outerHTML" hx-target="#body-container" hx-push-url="true" id="href-register">Register</a>
+                {% endif %}
             </div>
         </header>
         {% block body %} {% endblock %}

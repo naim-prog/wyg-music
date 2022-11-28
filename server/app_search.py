@@ -11,7 +11,7 @@ def get_search():
 
     render_music_player=True
 
-    # Se hace la request desde HTMX
+    # Request from HTMX
     if request.headers.get('Hx-Request'):
         return render_template(
             "search.html",

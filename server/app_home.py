@@ -11,7 +11,7 @@ def get_home():
     
     render_music_player=True
 
-    # Render only body container
+    # Request from HTMX
     if request.headers.get('Hx-Request'):
         return render_template(
             "home.html",
