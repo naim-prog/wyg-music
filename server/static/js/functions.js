@@ -60,3 +60,21 @@ function hrefSearch(event) {
         return false;
     }
 }
+
+
+function hrefSearchButton() {
+    var query = document.getElementById("search-form-input-search").value;
+        $.ajax({
+            url: '/search/?search='+query,
+            timeout: 5000,
+            type: 'GET',
+            headers: {'Ajax-Render': true},
+            success: function(msg, status) {
+                if(status === 'success') {
+                    history.replaceState('','','/search/?search='+query);
+                    $('#body-container').html(msg);
+                }
+                document.title = 'WYG - Search '+query;
+            }
+        })
+}
