@@ -9,13 +9,17 @@ app_home = Blueprint(__name__, "app_home")
 @app_home.get("/")
 def get_home():
     
+    render_music_player=True
+
     # Render only body container
-    if request.headers.get('Ajax-Render'):
-        return send_file(
-            "templates/home"
+    if request.headers.get('Hx-Request'):
+        return render_template(
+            "home.html",
+            render_music_player=False
         )
 
     # Render hole page
     return render_template(
-        "home.html"
+        "home.html",
+        render_music_player=render_music_player
     )
