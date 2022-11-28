@@ -26,6 +26,7 @@ Music Wherever You Go is a self-hosted music service. I pretend to do the server
 <dt> <b>28 / 11 / 2022</b> </dt>
 
 <dd> Search bar working with key 'Enter' or with button (not visual finished)
+<dd> Change pure AJAX functions in javascript with onclick functions to HTMX
 
 </dl>
 
