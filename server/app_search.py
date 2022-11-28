@@ -9,12 +9,6 @@ app_search = Blueprint(__name__, "app_search")
 @app_search.get("/search/")
 def get_search():
     print(request.args.get('search'))
-    # Render only body container
-    if request.headers.get('Ajax-Render'):
-        return render_template_string(
-            open("templates/search").read(),
-            user_search = request.args.get('search')
-        )
 
     print("render")
     # Render hole page
