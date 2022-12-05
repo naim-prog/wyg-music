@@ -6,7 +6,8 @@ then
 	exit 1
 fi
 
-
+# Install redis
 sudo apt install redis
 
-# pip install -r requirements.txt
+# Install python packages
+pip install -r requirements.txt
