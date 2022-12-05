@@ -1,0 +1,12 @@
+{% extends "base.html" %} 
+
+{% block title %} WYG - Search {{ user_search }} {% endblock %}
+
+{% block body %}
+
+<form id="form-upload-song" action="/upload/" method="post">
+    <input type="file" name="song-file">
+    <input type="submit" value="Upload">
+</form>
+
+{% endblock %}

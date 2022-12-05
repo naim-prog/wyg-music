@@ -28,6 +28,10 @@ Music Wherever You Go is a self-hosted music service. I pretend to do the server
 <dd> Search bar working with key 'Enter' or with button (not visual finished)
 <dd> Change pure AJAX functions in javascript with onclick functions to HTMX
 
+<dt> <b>5 / 12 / 2022</b> </dt>
+
+<dd> Updated install.sh script to automate installation of packages and tools
+
 </dl>
 
 # Redis database diagram
