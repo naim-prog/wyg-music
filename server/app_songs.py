@@ -92,4 +92,10 @@ def song_name_is_correct(song_name):
 
 
 def new_song_name(song_name):
+    """
+    If the artist is in the database
+        set the artist name exactly the same
+    if is not in the database
+        add the artist in the database
+    """
     return song_name
