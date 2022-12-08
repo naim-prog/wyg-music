@@ -36,7 +36,7 @@ Music Wherever You Go is a self-hosted music service. I pretend to do the server
 
 <dd> Added 'Upload' endpoint and a select files to upload songs (not working)
 <dd> Init of Redis database and begining of documentation to familiarized with the functions
-<dd> Added [configuration file](./server/app_conf.py) for Redis (probably for more in a future)
+<dd> Added [configuration file](https://github.com/naim-prog/wyg-music/blob/main/server/app_conf.py) for Redis (probably for more in a future)
 
 </dl>
 

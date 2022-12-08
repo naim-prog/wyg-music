@@ -8,4 +8,3 @@ REDIS_PORT = 0
 REDIS_DATABASE = "user"
 
 REDIS_PASSWORD = "password"
-
