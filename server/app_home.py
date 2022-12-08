@@ -9,7 +9,6 @@ app_home = Blueprint(__name__, "app_home")
 @app_home.get("/")
 def get_home():
     
-    render_music_player=True
 
     # Request from HTMX
     if request.headers.get('Hx-Request'):
@@ -18,8 +17,27 @@ def get_home():
             render_music_player=False
         )
 
-    # Render hole page
+    # Render hole page (and MusicPlayer)
     return render_template(
         "home.html",
-        render_music_player=render_music_player
+        render_music_player=True
     )
+
+
+# Upload a song
+@app_home.get("/upload/")
+def get_upload():
+
+    # Request from HTMX
+    if request.headers.get('Hx-Request'):
+        return render_template(
+            "upload.html",
+            render_music_player=False
+        )
+
+    # Render hole page (and MusicPlayer)
+    return render_template(
+        "upload.html",
+        render_music_player=True
+    )
+    

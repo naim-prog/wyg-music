@@ -9,7 +9,6 @@ app_user = Blueprint(__name__, "app_user")
 @app_user.get("/user/")
 def get_user():
     
-    render_music_player=True
 
     # Request from HTMX
     if request.headers.get('Hx-Request'):
@@ -21,6 +20,5 @@ def get_user():
     # Render hole page
     return render_template(
         "user.html",
-        render_music_player=render_music_player
+        render_music_player=True
     )
-        
