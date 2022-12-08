@@ -1,5 +1,5 @@
 # For the hole app
-from flask import Flask, render_template, send_file, request
+from flask import Flask
 # Secret key app
 import secrets
 # Global variables

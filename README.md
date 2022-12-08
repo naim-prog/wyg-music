@@ -34,7 +34,7 @@ Music Wherever You Go is a self-hosted music service. I pretend to do the server
 
 <dt> <b>8 / 12 / 2022</b> </dt>
 
-<dd> Added 'Upload' endpoint and a Drag&Drop box to upload songs (not working)
+<dd> Added 'Upload' endpoint and a select files to upload songs (not working)
 
 </dl>
 

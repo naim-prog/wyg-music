@@ -2,7 +2,6 @@
 <head>
     <link rel="stylesheet" href="/static/css/styles.css">
     <title>{% block title %} {% endblock %}</title>
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
     <script src="/static/js/htmx.min.js"></script>
     <script src="/static/js/functions.js"></script>
@@ -15,7 +14,7 @@
                 <a hx-get="/" hx-swap="outerHTML" hx-target="#body-container" hx-push-url="true" id="href-home">Music-WYG</a>
             </div>
             <div class="header-upload">
-                <a hx-get="/upload" hx-swap="outerHTML" hx-target="#body-container" hx-push-url="true" id="href-upload">Upload</a>
+                <a hx-get="/upload/" hx-swap="outerHTML" hx-target="#body-container" hx-push-url="true" id="href-upload">Upload</a>
             </div>
             {% include "search-bar.html" %}
             <div class="header-user">
