@@ -2,6 +2,8 @@
 from flask import Blueprint, render_template, request, flash
 # For user login and register
 from app_redis import rd
+# For session tokens
+import secrets
 
 
 # Blueprint for home
@@ -41,6 +43,8 @@ SADD 	    Adds the item to the set
 SMEMBERS 	Returns the entire set of items
 SISMEMBER 	Checks if an item is in the set
 SREM 	    Removes the item from the set, if it exists
+HMGET       Get the value of a dictionary
+HSET        Set the value for a key in a dictionary
 """
 
 # Login (POST PAGE)
@@ -67,7 +71,28 @@ def post_login():
 
     # User doesnt exist on the database
     """
-    if not rd.sismember('users', request.form.get('user')):
+    if not rd.hmget('users', request.form.get('user')):
         flash("User or password dont match")
     """
-    rd.sadd()
+
+    # Password dont correspond with the one that the user has
+    """
+    if rd.hmget('users', request.form.get('user')) != hash_password(request.form.get('password')):
+        flash("User or password dont match")
+    """
+
+    # New token for the 
+    user_session_token = secrets.token_urlsafe(64)
+    """
+    add session_users(user, user_session_token)
+    add session_tokens(user_session_token, expire=1day)
+    """
+
+    flash("Successfully login")
+    return render_template(
+        "home.html",
+        render_music_player=render_music_player,
+        user_in_session="user"
+    )
+
+    

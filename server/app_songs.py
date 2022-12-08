@@ -75,7 +75,7 @@ def post_upload():
             render_music_player=render_music_player
         )
         
-
+    # All songs uploaded correctly
     flash("All songs uploaded correctly")
     return render_template(
         "upload.html",
