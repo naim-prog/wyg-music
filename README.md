@@ -32,6 +32,10 @@ Music Wherever You Go is a self-hosted music service. I pretend to do the server
 
 <dd> Updated install.sh script to automate installation of packages and tools
 
+<dt> <b>8 / 12 / 2022</b> </dt>
+
+<dd> Added 'Upload' endpoint and a Drag&Drop box to upload songs (not working)
+
 </dl>
 
 # Redis database diagram
