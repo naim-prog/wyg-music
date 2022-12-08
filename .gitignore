@@ -1,4 +1,10 @@
+# JIT compilations of python server
 __pycache__/
+# Songs files
 *.mp3
+# Personal documentation
 docs
+# Differents draws for diagrams
 *.drawio
+# Configuration for different files
+app_config.py
