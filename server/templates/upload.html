@@ -14,7 +14,7 @@
 
 <div class="upload-song">
     <form id="form-upload-song" hx-post="/upload/" hx-swap="outerHTML" hx-target="#body-container" hx-encoding="multipart/form-data">
-        <input type="file" name="song-files" accept=".mp3">
+        <input type="file" name="song-files" accept=".mp3" multiple="true">
         <div class="song-holder" id="song-holder">
             <div class="text-song-holder">
                 Drop here your songs

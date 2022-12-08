@@ -34,9 +34,12 @@ def post_upload():
     render_music_player = not request.headers.get('Hx-Request')
 
     # List of files uploaded
-    file_list = request.files.get('song-files')
+    file_list = request.files.getlist('song-files')
 
-    print(file_list)
+    """
+    SONG TYPE OF NAME:
+    Artist Name - Name of Song.mp3
+    """
 
     # There is no song dropped but he push "upload" button
     if file_list == None:
@@ -46,9 +49,47 @@ def post_upload():
             render_music_player=render_music_player
         )
 
-    flash("Songs uploaded")
-    # If there are songs
+    any_error_file = False
+    list_error_names = []
+
+    # Iterate through all the songs
+    for file in file_list:
+        # If name file is correct save the file
+        if song_name_is_correct(file.filename):
+            file.save(os.path.join(SONGS_DIRECTORY, new_song_name(file.filename)))
+        else:
+            any_error_file = True
+            list_error_names.append(file.filename)
+
+    # If there has been any error notificate
+    if any_error_file:
+        flash("There has been an error with the next song names")
+        
+        # The the song name that contain errors
+        for song_name in list_error_names:
+            flash(song_name)
+        
+        # Return the upload page to reupload the songs
+        return render_template(
+            "upload.html",
+            render_music_player=render_music_player
+        )
+        
+
+    flash("All songs uploaded correctly")
     return render_template(
         "upload.html",
         render_music_player=render_music_player
     )
+
+
+
+
+# ----------------------------- FUNCTIONS -----------------------------
+
+def song_name_is_correct(song_name):
+    return True
+
+
+def new_song_name(song_name):
+    return song_name
