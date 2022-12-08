@@ -4,16 +4,22 @@
 
 {% block body %}
 
-<div class="upload-song">
-    <form id="form-upload-song" action="/upload/" method="post">
-        <input type="file" name="song-file" accept=".mp3" style="display: none;">
-        <div class="song-holder">
-            <div class="text-song-holder">
-                Drop here your songs
-            </div>
+{% if get_flashed_messages() %}
+<div class="flashed-messages">
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="upload-song" ondrop="songHolderODrop(e)" ondragenter="songHolderODrag(e)" ondragover="songHolderODrag(e)">
+    <input id="song-files" type="file" name="song-files" accept=".mp3" style="display: none;" multiple="true">
+    <div class="song-holder" id="song-holder" >
+        <div class="text-song-holder">
+            Drop here your songs
         </div>
-        <input class="submit-song-upload" type="submit" value="Upload">
-    </form>
+    </div>
+    <button class="submit-song-upload" onclick="uploadFiles()" hx-post="/upload/" hx-swap="outerHTML" hx-target="#body-container">Upload</button>
 </div>
 
 {% endblock %}

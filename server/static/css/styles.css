@@ -31,7 +31,7 @@ div.text-song-holder {
     margin-left: 33%;
 }
 
-input.submit-song-upload {
+button.submit-song-upload {
     width: 610px;
     align-items: center;
 }
