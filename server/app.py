@@ -6,6 +6,8 @@ import secrets
 from global_vars import *
 # Configuration
 from app_conf import *
+# Init Redis Server
+from app_redis import init_redis_server
 
 # For blueprints
 from app_home       import app_home
@@ -28,5 +30,8 @@ app.register_blueprint(app_search)
 
 # Main app
 if __name__ == "__main__":
+    # Initialize Redis Server
+    init_redis_server()
+    
     # Run the app
     app.run(host=APP_HOST, port=APP_PORT, debug=True)

@@ -19,12 +19,19 @@
             {% include "search-bar.html" %}
             <div class="header-user">
                 {% if user_in_session %}
-                    <a hx-get="/{{ user_in_session }}/" hx-swap="outerHTML" hx-target="#body-container" hx-push-url="true" id="href-user">User</a>
+                    <a hx-get="/user/{{ user_in_session }}/" hx-swap="outerHTML" hx-target="#body-container" hx-push-url="true" id="href-user">{{ user_in_session }}</a>
                 {% else %}
                     <a hx-get="/login/" hx-swap="outerHTML" hx-target="#body-container" hx-push-url="true" id="href-login">Login</a>
                 {% endif %}
             </div>
         </header>
+        {% if get_flashed_messages() %}
+            <div class="flashed-messages">
+                {% for message in get_flashed_messages() %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
         {% block body %} {% endblock %}
     </div>
     {% if render_music_player %}

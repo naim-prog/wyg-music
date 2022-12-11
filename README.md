@@ -40,8 +40,9 @@ Music Wherever You Go is a self-hosted music service. I pretend to do the server
 
 <dt> <b>11 / 12 / 2022</b> </dt>
 
-<dd> Added 'login' endpoint (not working)
+<dd> Added 'login' endpoint (working but not final version)
 <dd> Improvement of Redis Databases Structure
+<dd> Added more params to the <a href="server/app_conf.py">configuration file</a>
 
 </dl>
 

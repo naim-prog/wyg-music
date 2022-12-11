@@ -2,6 +2,8 @@
 from flask import Blueprint, send_file, request, render_template, flash
 # Global variables
 from global_vars import *
+# Functions
+from app_functions import get_user_session
 
 # Blueprint for home
 app_songs = Blueprint(__name__, "app_songs")
@@ -23,7 +25,8 @@ def get_upload():
     # Render hole page (and MusicPlayer)
     return render_template(
         "upload.html",
-        render_music_player=render_music_player
+        render_music_player=render_music_player,
+        user_in_session=get_user_session(request.cookies.get('session_token'))
     )
     
 

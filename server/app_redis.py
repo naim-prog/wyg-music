@@ -2,7 +2,8 @@
 import redis
 # For app config parameters
 from app_conf import *
-
+# Hash the admin password
+from hashlib import sha512
 
 # Instance of the RedisDB
 rd = redis.Redis(
@@ -12,6 +13,10 @@ rd = redis.Redis(
     username=REDIS_USERNAME,
     password=REDIS_PASSWORD
 )
+
+def init_redis_server():
+    # If first time, add admin user and password
+    rd.hsetnx('users', REDIS_ADMIN_USERNAME, sha512(REDIS_ADMIN_PASSWORD.encode('utf-8')).hexdigest())
 
 """
                 REDIS DATABASES
@@ -23,14 +28,9 @@ REDIS:0 (users)
         'user1': 'password1(hashed)',
         'user2': 'password2(hashed)'
     },
-    # hash
-    'session_users': {
-        'user1': 'user1_session_token(hashed)',
-    }
-    # set
-    'session_tokens': (
-        'user1_session_token(hashed)' -> EXPIRE 36000 secs
-    )
+    # key
+    'user_session': 'user_session_token' -> expire seconds
+    
 }
 REDIS:1 (songs)
 {
