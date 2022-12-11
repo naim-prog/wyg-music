@@ -43,6 +43,7 @@ Music Wherever You Go is a self-hosted music service. I pretend to do the server
 <dd> Added 'login' endpoint (working but not final version)
 <dd> Improvement of Redis Databases Structure
 <dd> Added more params to the <a href="server/app_conf.py">configuration file</a>
+<dd> Session token for users who are logged
 
 </dl>
 
