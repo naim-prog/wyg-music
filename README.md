@@ -30,13 +30,18 @@ Music Wherever You Go is a self-hosted music service. I pretend to do the server
 
 <dt> <b>5 / 12 / 2022</b> </dt>
 
-<dd> Updated install.sh script to automate installation of packages and tools
+<dd> Updated <a href="install.sh">install.sh</a> script to automate installation of packages and tools
 
 <dt> <b>8 / 12 / 2022</b> </dt>
 
 <dd> Added 'Upload' endpoint and a select files to upload songs (not working)
 <dd> Init of Redis database and begining of documentation to familiarized with the functions
 <dd> Added <a href="server/app_conf.py">configuration file</a> for Redis (probably for more than just Redis in a future)
+
+<dt> <b>11 / 12 / 2022</b> </dt>
+
+<dd> Added 'login' endpoint (not working)
+<dd> Improvement of Redis Databases Structure
 
 </dl>
 
