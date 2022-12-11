@@ -1,10 +1,20 @@
 # Keep this file secure, here you will include all sensitive
 # information about diferent configurations on your app
 
+# --------------- APP ---------------
+
+APP_HOST = "0.0.0.0"
+
+APP_PORT = 80
+
+# -------------- REDIS --------------
+
 REDIS_HOST = "localhost"
 
-REDIS_PORT = 0
+REDIS_PORT = 6379
 
-REDIS_DATABASE = "user"
+REDIS_DATABASE = 0
 
-REDIS_PASSWORD = "password"
+REDIS_USERNAME = "default"
+
+REDIS_PASSWORD = ""

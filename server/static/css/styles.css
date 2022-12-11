@@ -1,5 +1,6 @@
 * {
     font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
@@ -15,9 +16,11 @@ header.header {
 
 div.upload-song {
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     margin-top: 12%;
-    margin-left: 34%;
 }
 
 div.song-holder {
@@ -68,8 +71,12 @@ button.search-button-img {
 }
 
 div.body-container {
+    height: 100%;
+    width: 100%;
     font-size: 13px;
 }
+
+/* -------- MUSIC PLAYER -------- */
 
 div.music-container {
     bottom: 0;
@@ -81,4 +88,46 @@ div.music-container {
 
 audio.player {
     width: 50%;
+}
+
+/* --------- LOGIN PAGE --------- */
+
+div.login-box-container {
+    display: flex;
+	flex-direction: row;
+    width: 100%;
+    transform: translate(0, 100%);
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+div.login-box {
+    background-color: rgb(0, 130, 190);
+    border-radius: 3px;
+    padding: 20px;
+}
+
+div.login-box-header {
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+div.login-box-form-submit {
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    padding-top: 15px;
+}
+
+input.login-box-form-submit {
+    background-color: rgb(44, 104, 231);
+    border-radius: 10px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid
 }

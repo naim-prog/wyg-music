@@ -4,6 +4,8 @@ from flask import Flask
 import secrets
 # Global variables
 from global_vars import *
+# Configuration
+from app_conf import *
 
 # For blueprints
 from app_home       import app_home
@@ -27,4 +29,4 @@ app.register_blueprint(app_search)
 # Main app
 if __name__ == "__main__":
     # Run the app
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host=APP_HOST, port=APP_PORT, debug=True)

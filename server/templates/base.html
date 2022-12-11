@@ -22,7 +22,6 @@
                     <a hx-get="/{{ user_in_session }}/" hx-swap="outerHTML" hx-target="#body-container" hx-push-url="true" id="href-user">User</a>
                 {% else %}
                     <a hx-get="/login/" hx-swap="outerHTML" hx-target="#body-container" hx-push-url="true" id="href-login">Login</a>
-                    <a hx-get="/register/" hx-swap="outerHTML" hx-target="#body-container" hx-push-url="true" id="href-register">Register</a>
                 {% endif %}
             </div>
         </header>
@@ -31,7 +30,7 @@
     {% if render_music_player %}
     <div class="music-container">
         <audio class="player" controls>
-            <source src="/songs/passenger-let-her-go.mp3" type="audio/mp3">
+            <source src="/songs/passenger - let her go.mp3" type="audio/mp3">
         </audio>
     </div>
     {% endif %}

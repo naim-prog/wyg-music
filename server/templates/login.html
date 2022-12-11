@@ -1,0 +1,34 @@
+{% extends "base.html" %} 
+
+{% block title %} WYG - Search {{ user_search }} {% endblock %}
+
+{% block body %}
+
+{% if get_flashed_messages() %}
+<div class="flashed-messages">
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="login-box-container">
+    <div class="login-box">
+        <div class="login-box-header">
+            Login
+        </div>
+        <div class="login-box-form">
+            <form hx-post="/login/" hx-swap="outerHTML" hx-target="#body-container">
+                <label>User</label> <br>
+                <input type="text" name="user"> <br>
+                <label>Password</label> <br>
+                <input type="password" name="password"> <br>
+                <div class="login-box-form-submit">
+                    <input class="login-box-form-submit" type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -87,11 +87,20 @@ def post_upload():
 
 # ----------------------------- FUNCTIONS -----------------------------
 
-def song_name_is_correct(song_name):
+def song_name_is_correct(song_name: str):
+    
+    # Is not an mp3 file
+    if not song_name.endswith('.mp3'):
+        return False
+    
+    # If the song doesn't have ' - ' there is no artist or song name
+    if song_name.find(' - ') == -1:
+        return False
+
     return True
 
 
-def new_song_name(song_name):
+def new_song_name(song_name: str):
     """
     If the artist is in the database
         set the artist name exactly the same

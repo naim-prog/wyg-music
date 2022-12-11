@@ -4,7 +4,8 @@ from flask import Blueprint, render_template, request, flash
 from app_redis import rd
 # For session tokens
 import secrets
-
+# Hashing passwords
+from hashlib import sha512
 
 # Blueprint for home
 app_user = Blueprint(__name__, "app_user")
@@ -16,7 +17,6 @@ def get_user():
     # Request from HTMX or not
     render_music_player = not request.headers.get('Hx-Request')
 
-
     # Render hole page
     return render_template(
         "user.html",
@@ -27,8 +27,8 @@ def get_user():
 # Login (GET PAGE)
 @app_user.get("/login/")
 def get_login():
-    # No music player (If is not logged we cannot let them reproduce songs)
-    render_music_player = False
+    # Request from HTMX or not
+    render_music_player = not request.headers.get('Hx-Request')
 
     # Render login page
     return render_template(
@@ -50,15 +50,8 @@ HSET        Set the value for a key in a dictionary
 # Login (POST PAGE)
 @app_user.post("/login/")
 def post_login():
-    # No music player (If is not logged we cannot let them reproduce songs)
-    render_music_player = False
-    
-    """
-    form: {
-        user: user,
-        password: password
-    }
-    """
+    # Request from HTMX or not
+    render_music_player = not request.headers.get('Hx-Request')
 
     # One or both fields are empty
     if not request.form.get('user') or not request.form.get('password'):
