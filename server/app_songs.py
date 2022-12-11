@@ -12,7 +12,7 @@ app_songs = Blueprint(__name__, "app_songs")
 # Send music file
 @app_songs.get("/songs/<string:song_name>")
 def get_song(song_name):
-    return send_file(f"{BASE_SERVER_DIRECTORY}/songs/{song_name}", mimetype="audio/mp3")
+    return send_file(f"{SONGS_DIRECTORY}/{song_name}", mimetype="audio/mp3")
 
 
 # Upload a song (GET PAGE)
@@ -84,7 +84,6 @@ def post_upload():
         "upload.html",
         render_music_player=render_music_player
     )
-
 
 
 
